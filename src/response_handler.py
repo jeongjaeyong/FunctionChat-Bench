@@ -60,6 +60,8 @@ class ResponseHandler:
         Returns:
             list: A list of all responses fetched and saved.
         """
+        
+        predict_file_path = predict_file_path.replace("/","_")
         outputs = []
         # 1. check continuos
         if reset is False:
