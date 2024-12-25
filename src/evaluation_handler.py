@@ -282,6 +282,9 @@ class EvaluationHandler:
                 return
             write_option = 'a'
         # Initialize file writers for raw and formatted logs
+        eval_file_path = eval_file_path.replace("/","_")
+        eval_log_file_path = eval_log_file_path.replace("/","_")
+        
         eval_raw_fw = open(eval_file_path, write_option)
         eval_tsv_fw = open(eval_log_file_path, write_option)
         # Process each input/output pair
