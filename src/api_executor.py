@@ -102,7 +102,8 @@ class OpenaiModelAPI(AbstractModelAPIExecutor):
         use_eval (bool): Whether the API is for evaluation.
         """
         super().__init__(model, api_key)  # 수정된 부분
-        self.client = openai.OpenAI(api_key=api_key)
+        host = "http://localhost:8000/v1"
+        self.client = openai.OpenAI(base_url=host,, api_key=api_key)
         self.openai_chat_completion = self.client.chat.completions.create
         if use_eval is True:
             self.predict = self.predict_eval
