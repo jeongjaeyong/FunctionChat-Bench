@@ -470,4 +470,4 @@ class APIExecutorFactory:
         elif model_name.startswith('gemini'):  # Google developed model
             return GeminiModelAPI(model_name, gcloud_project_id=gcloud_project_id, gcloud_location=gcloud_location)
         else:
-            raise ValueError("Unsupported model name")
+            return OpenaiModelAPI(model_name, api_key)
